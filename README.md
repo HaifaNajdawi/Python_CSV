@@ -10,7 +10,7 @@
 * The greatest decrease in losses
 
   ### How to run the code:
-```
+```bash
   - git clone https://github.com/HaifaNajdawi/Python_CSV.git
   - cd PyBank
   - python main.py
@@ -30,7 +30,7 @@
   * The winner 
 
 ### How to run the code:
-```
+```bash 
   - git clone https://github.com/HaifaNajdawi/Python_CSV.git
   - cd PyPoll
   - python main.py

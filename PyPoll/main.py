@@ -32,14 +32,14 @@ with open (csv_path) as file_path:
         candidate_percentage += f"{candidate}: {candidate_dict[candidate] / votes:.3%} ({candidate_dict[candidate]})\n"
     #find the key has the maximum value
     max_key = max(candidate_dict, key=candidate_dict.get)
-    print("Election Results\n")
-    print("---------------------\n")
-    print(f"Total Votes: {votes}\n")
-    print("---------------------\n")
+    print("Election Results")
+    print("---------------------")
+    print(f"Total Votes: {votes}")
+    print("---------------------")
     print(f"{candidate_percentage}" )
-    print("---------------------\n")
-    print(f"Winner: {max_key}\n")
-    print("---------------------\n")
+    print("---------------------")
+    print(f"Winner: {max_key}")
+    print("---------------------")
 
 # Set variable for output file 
 output_path = os.path.join('analysis','output.txt')

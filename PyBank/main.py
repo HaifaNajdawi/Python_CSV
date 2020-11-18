@@ -14,7 +14,6 @@ with open (path_csv) as csv_file:
     # make list for the data
     rows=list(csv_reader)
     number_of_rows = len(rows)
-    print(number_of_rows)
 
     total = 0
     # create dictionary
@@ -54,23 +53,30 @@ with open (path_csv) as csv_file:
     # calling the name of dictionary and the key to take the value 
     max_number = (f"{changes_dict[max_revenue_row]} (${max_revenue_row}) ")
     min_number= (f"{changes_dict[min_revenue_row]} (${min_revenue_row})")
+    
+    #print to the terminal
+    print("Financial Analysis\n")
+    print("----------------------------------------------\n")
+    print(f"Total Months: {number_of_rows}\n")
+    print(f"Total: ${total} \n")
+    print(f"Average Change: ${average_change_round}\n")
+    print(f"Greatest Increase in Profit: ${max_number}\n")
+    print(f"Greatest Decrease in Profit: ${min_number}\n")
 
 # Set variable for output file  
-output_path = os.path.join('analysis',"output.csv")
-with open(output_path, 'w', newline='') as csvfile:
+output_path = os.path.join('analysis',"output.txt")
 
-    # Initialize csv.writer
-    csvwriter = csv.writer(csvfile)
-    #write the results to csv file 
-
-    csvwriter.writerow(["----------------------------------------------"])
-    csvwriter.writerow(["Financial Analysis"])
-    csvwriter.writerow(["----------------------------------------------"])
-    csvwriter.writerow([f"Total Months: {number_of_rows}"])
-    csvwriter.writerow([f"Total: ${total} "])
-    csvwriter.writerow([f"Average Change: ${average_change_round}"])
-    csvwriter.writerow([f"Greatest Increase in Profit: ${max_number}"])
-    csvwriter.writerow([f"Greatest Decrease in Profit: ${min_number}"])
+# open the output file
+with open(output_path,'w',newline="") as text_file:
+    
+    #write the results to text file 
+    text_file.write("Financial Analysis\n")
+    text_file.write("----------------------------------------------\n")
+    text_file.write(f"Total Months: {number_of_rows}\n")
+    text_file.write(f"Total: ${total} \n")
+    text_file.write(f"Average Change: ${average_change_round}\n")
+    text_file.write(f"Greatest Increase in Profit: ${max_number}\n")
+    text_file.write(f"Greatest Decrease in Profit: ${min_number}\n")
 
 
     

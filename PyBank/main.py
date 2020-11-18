@@ -61,13 +61,10 @@ with open(output_path, 'w', newline='') as csvfile:
 
     # Initialize csv.writer
     csvwriter = csv.writer(csvfile, delimiter=',')
-
-    # Write the first row (column headers)
-    csvwriter.writerow(["Financial Analysis\n"])
-
-    # Write the second row
-    csvwriter.writerow(["----------------------------------------------\n"])
     #write the results to csv file 
+
+    csvwriter.writerow(["Financial Analysis\n"])
+    csvwriter.writerow(["----------------------------------------------\n"])
     csvwriter.writerow("Financial Analysis\n")
     csvwriter.writerow("----------------------------------------------\n")
     csvwriter.writerow(f"Total Months: {number_of_rows}\n")

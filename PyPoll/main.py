@@ -42,7 +42,7 @@ with open(output_path, 'w',newline="") as csvfile:
     csvwriter = csv.writer(csvfile ,delimiter=',')
 
 
-    #write the result to text file 
+    #write the result to csv file 
     csvwriter.writerow(["Election Results"])
     csvwriter.writerow(["---------------------"])
     csvwriter.writerow([f"Total Votes: {votes}"])

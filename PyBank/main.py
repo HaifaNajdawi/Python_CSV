@@ -53,13 +53,13 @@ with open (path_csv) as csv_file:
     min_number= (f"{changes_dict[min_revenue_row]} (${min_revenue_row})")
 
     #print to the terminal
-    print("Financial Analysis\n")
-    print("----------------------------------------------\n")
-    print(f"Total Months: {number_of_rows}\n")
-    print(f"Total: ${total} \n")
-    print(f"Average Change: ${average_change_round}\n")
-    print(f"Greatest Increase in Profit: ${max_number}\n")
-    print(f"Greatest Decrease in Profit: ${min_number}\n")
+    print("Financial Analysis")
+    print("----------------------------------------------")
+    print(f"Total Months: {number_of_rows}")
+    print(f"Total: ${total} ")
+    print(f"Average Change: ${average_change_round}")
+    print(f"Greatest Increase in Profit: ${max_number}")
+    print(f"Greatest Decrease in Profit: ${min_number}")
 
 # Set variable for output file  
 output_path = os.path.join('analysis',"output.txt")

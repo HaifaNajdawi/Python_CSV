@@ -35,20 +35,22 @@ with open (csv_path) as file_path:
     max_key = max(candidate_dict, key=candidate_dict.get)
 
 # Set variable for output file 
-output_path = os.path.join('analysis','output.txt')
+output_path = os.path.join('analysis','output.csv')
 
 # open the output file 
-with open (output_path,'w',newline="") as text_file:
+with open(output_path, 'w',newline="") as csvfile:
+    csvwriter = csv.writer(csvfile ,delimiter=',')
+
 
     #write the result to text file 
-    text_file.write("Election Results\n")
-    text_file.write("---------------------\n")
-    text_file.write(f"Total Votes: {votes}\n")
-    text_file.write("---------------------\n")
-    text_file.write(f"{candidate_percentage}" )
-    text_file.write("---------------------\n")
-    text_file.write(f"Winner: {max_key}\n")
-    text_file.write("---------------------\n")
+    csvwriter.writerow(["Election Results"])
+    csvwriter.writerow(["---------------------"])
+    csvwriter.writerow([f"Total Votes: {votes}"])
+    csvwriter.writerow(["---------------------"])
+    csvwriter.writerow([f"{candidate_percentage}"])
+    csvwriter.writerow(["---------------------"])
+    csvwriter.writerow([f"Winner: {max_key}"])
+    csvwriter.writerow(["---------------------"])
 
     
     

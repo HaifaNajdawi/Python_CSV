@@ -63,7 +63,6 @@ with open(output_path, 'w', newline='') as csvfile:
     csvwriter = csv.writer(csvfile,delimiter=",")
     #write the results to csv file 
 
-    csvwriter.writerow(["Financial Analysis"])
     csvwriter.writerow(["----------------------------------------------"])
     csvwriter.writerow(["Financial Analysis"])
     csvwriter.writerow(["----------------------------------------------"])

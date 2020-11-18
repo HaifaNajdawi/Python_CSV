@@ -57,18 +57,24 @@ with open (path_csv) as csv_file:
 
 # Set variable for output file  
 output_path = os.path.join('analysis',"output.txt")
+with open(output_path, 'w', newline='') as csvfile:
 
-# open the output file
-with open(output_path,'w',newline="") as text_file:
-    
-    #write the results to text file 
-    text_file.write("Financial Analysis\n")
-    text_file.write("----------------------------------------------\n")
-    text_file.write(f"Total Months: {number_of_rows}\n")
-    text_file.write(f"Total: ${total} \n")
-    text_file.write(f"Average Change: ${average_change_round}\n")
-    text_file.write(f"Greatest Increase in Profit: ${max_number}\n")
-    text_file.write(f"Greatest Decrease in Profit: ${min_number}\n")
+    # Initialize csv.writer
+    csvwriter = csv.writer(csvfile, delimiter=',')
+
+    # Write the first row (column headers)
+    csvwriter.writerow(["Financial Analysis\n"])
+
+    # Write the second row
+    csvwriter.writerow(["----------------------------------------------\n"])
+    #write the results to csv file 
+    csvwriter.writerow("Financial Analysis\n")
+    csvwriter.writerow("----------------------------------------------\n")
+    csvwriter.writerow(f"Total Months: {number_of_rows}\n")
+    csvwriter.writerow(f"Total: ${total} \n")
+    csvwriter.writerow(f"Average Change: ${average_change_round}\n")
+    csvwriter.writerowe(f"Greatest Increase in Profit: ${max_number}\n")
+    csvwriter.writerow(f"Greatest Decrease in Profit: ${min_number}\n")
 
 
     

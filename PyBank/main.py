@@ -56,22 +56,22 @@ with open (path_csv) as csv_file:
     min_number= (f"{changes_dict[min_revenue_row]} (${min_revenue_row})")
 
 # Set variable for output file  
-output_path = os.path.join('analysis',"output.txt")
+output_path = os.path.join('analysis',"output.csv")
 with open(output_path, 'w', newline='') as csvfile:
 
     # Initialize csv.writer
-    csvwriter = csv.writer(csvfile, delimiter=',')
+    csvwriter = csv.writer(csvfile,delimiter=",")
     #write the results to csv file 
 
-    csvwriter.writerow(["Financial Analysis\n"])
-    csvwriter.writerow(["----------------------------------------------\n"])
-    csvwriter.writerow("Financial Analysis\n")
-    csvwriter.writerow("----------------------------------------------\n")
-    csvwriter.writerow(f"Total Months: {number_of_rows}\n")
-    csvwriter.writerow(f"Total: ${total} \n")
-    csvwriter.writerow(f"Average Change: ${average_change_round}\n")
-    csvwriter.writerowe(f"Greatest Increase in Profit: ${max_number}\n")
-    csvwriter.writerow(f"Greatest Decrease in Profit: ${min_number}\n")
+    csvwriter.writerow(["Financial Analysis"])
+    csvwriter.writerow(["----------------------------------------------"])
+    csvwriter.writerow(["Financial Analysis"])
+    csvwriter.writerow(["----------------------------------------------"])
+    csvwriter.writerow([f"Total Months: {number_of_rows}"])
+    csvwriter.writerow([f"Total: ${total} "])
+    csvwriter.writerow([f"Average Change: ${average_change_round}"])
+    csvwriter.writerow([f"Greatest Increase in Profit: ${max_number}"])
+    csvwriter.writerow([f"Greatest Decrease in Profit: ${min_number}"])
 
 
     

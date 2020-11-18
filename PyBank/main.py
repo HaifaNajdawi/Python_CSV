@@ -60,7 +60,7 @@ output_path = os.path.join('analysis',"output.csv")
 with open(output_path, 'w', newline='') as csvfile:
 
     # Initialize csv.writer
-    csvwriter = csv.writer(csvfile,delimiter=",")
+    csvwriter = csv.writer(csvfile)
     #write the results to csv file 
 
     csvwriter.writerow(["----------------------------------------------"])

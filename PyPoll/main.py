@@ -14,7 +14,6 @@ with open (csv_path) as file_path:
     #length for the rows
     votes = len(rows)
 
-    print(votes)
 
     # create dictionary
     candidate_dict = {}
@@ -33,24 +32,30 @@ with open (csv_path) as file_path:
         candidate_percentage += f"{candidate}: {candidate_dict[candidate] / votes:.3%} ({candidate_dict[candidate]})\n"
     #find the key has the maximum value
     max_key = max(candidate_dict, key=candidate_dict.get)
+    print("Election Results\n")
+    print("---------------------\n")
+    print(f"Total Votes: {votes}\n")
+    print("---------------------\n")
+    print(f"{candidate_percentage}" )
+    print("---------------------\n")
+    print(f"Winner: {max_key}\n")
+    print("---------------------\n")
 
 # Set variable for output file 
-output_path = os.path.join('analysis','output.csv')
+output_path = os.path.join('analysis','output.txt')
 
 # open the output file 
-with open(output_path, 'w',newline="") as csvfile:
-    csvwriter = csv.writer(csvfile ,delimiter=',')
+with open (output_path,'w',newline="") as text_file:
 
-
-    #write the result to csv file 
-    csvwriter.writerow(["Election Results"])
-    csvwriter.writerow(["---------------------"])
-    csvwriter.writerow([f"Total Votes: {votes}"])
-    csvwriter.writerow(["---------------------"])
-    csvwriter.writerow([f"{candidate_percentage}"])
-    csvwriter.writerow(["---------------------"])
-    csvwriter.writerow([f"Winner: {max_key}"])
-    csvwriter.writerow(["---------------------"])
+    #write the result to text file 
+    text_file.write("Election Results\n")
+    text_file.write("---------------------\n")
+    text_file.write(f"Total Votes: {votes}\n")
+    text_file.write("---------------------\n")
+    text_file.write(f"{candidate_percentage}" )
+    text_file.write("---------------------\n")
+    text_file.write(f"Winner: {max_key}\n")
+    text_file.write("---------------------\n")
 
     
     

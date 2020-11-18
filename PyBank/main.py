@@ -41,8 +41,6 @@ with open (path_csv) as csv_file:
 
     #using round() method 
     average_change_round=(round(average_change,2))
-    print(total)
-    print(average_change_round)
    
     # find the greatest change increase 
     max_revenue_row = max(changes_dict.keys())
@@ -53,7 +51,7 @@ with open (path_csv) as csv_file:
     # calling the name of dictionary and the key to take the value 
     max_number = (f"{changes_dict[max_revenue_row]} (${max_revenue_row}) ")
     min_number= (f"{changes_dict[min_revenue_row]} (${min_revenue_row})")
-    
+
     #print to the terminal
     print("Financial Analysis\n")
     print("----------------------------------------------\n")
